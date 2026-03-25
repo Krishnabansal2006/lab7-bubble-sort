@@ -8,3 +8,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 14:00
 - **Prompt**: Can you explain to me how Bubble Sort works?
 
+### 25-03-2026 14:00
+- **Prompt**: Help me learn how to write a Bubble Sort application in python
+
