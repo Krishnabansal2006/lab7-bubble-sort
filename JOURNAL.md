@@ -30,3 +30,8 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 14:01
 - **Prompt**: Can you help me learn by writing a skeleton bubble sort app with stubs functions, with comments and TODOs that will indicate what I need to do?
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 14:09
+- **Prompt**: Can you review my bubble sort implementation and make some suggestion ?
