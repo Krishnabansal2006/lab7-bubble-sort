@@ -15,3 +15,8 @@
 - **Socratic Mode**: ON
 - **Changes Made**: Read .github/copilot-instructions.md and .github/agents/journal-logger.agent.md; no code/config changes.
 - **Context and Reasons for Changes**: User requested instruction-file review only, so I validated both files and logged this interaction per repo policy.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 14:00
+- **Prompt**: Can you explain to me how Bubble Sort works?
