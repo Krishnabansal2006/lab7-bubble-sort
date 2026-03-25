@@ -25,3 +25,8 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 14:00
 - **Prompt**: Help me learn how to write a Bubble Sort application in python
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 14:01
+- **Prompt**: Can you help me learn by writing a skeleton bubble sort app with stubs functions, with comments and TODOs that will indicate what I need to do?
