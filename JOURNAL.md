@@ -125,3 +125,14 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 15:19
 - **Prompt**: Can you fix the issues you found? Move everything into run_app() and clean up unused imports.
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 15:19
+- **User**: krishna.bansal@epita.fr
+- **Prompt**: Can you fix the issues you found? Move everything into run_app() and clean up unused imports.
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Refactored interactive flow into run_app(), added __main__ guard, removed unused os import and unused max_val variable, and fixed undefined-name scope issues.
+- **Context and Reasons for Changes**: User requested direct fixes from review findings while keeping testable imports; refactor prevents top-level execution side effects and resolves NameError risks.
