@@ -21,7 +21,7 @@ A small Python lab project that implements Bubble Sort in clear, testable steps.
 ## Requirements
 
 - Python 3.10+ (3.11 recommended)
-- `pytest` for running tests
+- Dependencies listed in `requirements.txt`
 
 ## Setup
 
@@ -32,10 +32,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-2. Install test dependency:
+2. Install project dependencies:
 
 ```bash
-pip install pytest
+pip install -r requirements.txt
 ```
 
 ## Run tests
@@ -43,12 +43,31 @@ pip install pytest
 From the project root:
 
 ```bash
-pytest -q
+python3 -m pytest -q
 ```
+
+This project currently uses:
+
+- `pygame` for 2D visualization
+- `pytest` for the test suite
+
+## Run the app
+
+From the project root:
+
+```bash
+python3 main.py
+```
+
+When prompted, choose a visualization mode:
+
+- `none`: print only final sorted output
+- `terminal`: ASCII in-place redraw animation
+- `pygame`: 2D bar animation in a window (press `Q` or `Esc` to close)
 
 ## Quick usage example
 
-`main.py` is currently a function module (no CLI entrypoint). You can use it from a Python shell:
+You can still use the functions directly from a Python shell:
 
 ```python
 from main import parse_user_input, bubble_sort, format_output

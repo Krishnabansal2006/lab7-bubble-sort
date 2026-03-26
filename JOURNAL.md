@@ -162,3 +162,14 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 15:34
 - **Prompt**: Can you install PyGame in the local virtual environment and then create a requirements.txt that includes the required libraries to run this project, and finally update README to explain all of this?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 15:35
+- **User**: krishna.bansal@epita.fr
+- **Prompt**: Can you install PyGame in the local virtual environment and then create a requirements.txt that includes the required libraries to run this project, and finally update README to explain all of this?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Configured local venv, installed pygame and pytest in that environment, created requirements.txt with pinned versions, and updated README to install dependencies via requirements.txt.
+- **Context and Reasons for Changes**: User requested environment setup plus dependency and documentation updates for running/testing the project with Pygame visualization.
