@@ -44,3 +44,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 15:19
 - **Prompt**: Can you fix the issues you found? Move everything into run_app() and clean up unused imports.
 
+### 26-03-2026 15:22
+- **Prompt**: I would like now to explore a different rendering approach for the visualization with some real 2d graphics. What would you suggest?
+
