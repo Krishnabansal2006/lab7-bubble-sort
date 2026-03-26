@@ -120,3 +120,8 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 15:18
 - **Prompt**: can you review my changes ?
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 15:19
+- **Prompt**: Can you fix the issues you found? Move everything into run_app() and clean up unused imports.

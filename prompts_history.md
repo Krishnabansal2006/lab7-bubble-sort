@@ -41,3 +41,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 15:18
 - **Prompt**: can you review my changes ?
 
+### 26-03-2026 15:19
+- **Prompt**: Can you fix the issues you found? Move everything into run_app() and clean up unused imports.
+
