@@ -78,3 +78,14 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 15:06
 - **Prompt**: Can you create or update README.md for this project?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 15:08
+- **User**: krishna.bansal@epita.fr
+- **Prompt**: Can you create or update README.md for this project?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Created README.md with project overview, structure, requirements, setup steps, pytest instructions, and a runnable usage example aligned with main.py and tests.
+- **Context and Reasons for Changes**: User requested README creation/update; the repository lacked README.md, so I added clear onboarding and execution guidance for the bubble sort lab.
