@@ -56,3 +56,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 15:38
 - **Prompt**: Can you add two different colors for the two bars being swapped, and slow down the animation a bit?
 
+### 26-03-2026 15:42
+- **Prompt**: main.py is too big and looks messy. Can you refactor the project and enforce the separation of concerns between UI and Logic? Use several files if needed.
+

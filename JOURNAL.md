@@ -189,3 +189,8 @@
 - **Socratic Mode**: ON
 - **Changes Made**: Updated animation to swap-level frames with explicit swapped-pair metadata, added two distinct swap colors in terminal and Pygame renderers, and increased default delays for slower playback.
 - **Context and Reasons for Changes**: User requested clearer swapped-bar highlighting and slower animation speed for readability.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 15:42
+- **Prompt**: main.py is too big and looks messy. Can you refactor the project and enforce the separation of concerns between UI and Logic? Use several files if needed.
