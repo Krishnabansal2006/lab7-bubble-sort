@@ -1,4 +1,5 @@
-from main import bubble_sort, bubble_sort_step, format_output, needs_swap, parse_user_input
+from bubble_sort import bubble_sort, bubble_sort_step, needs_swap, parse_user_input
+from cli import format_output
 
 
 def test_parse_user_input_handles_spaces_and_empty_items() -> None:

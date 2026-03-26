@@ -1,6 +1,33 @@
 # Bubble Sort Lab (Python)
 
-A small Python lab project that implements Bubble Sort in clear, testable steps.
+A modular Python project that implements Bubble Sort with clear separation of concerns and multiple visualization modes.
+
+## Architecture
+
+This project follows clean architecture principles with separated concerns:
+
+- **`bubble_sort.py`**: Pure sorting logic (no UI dependencies)
+  - Input parsing
+  - Core sorting algorithm
+  - Animation frame generation
+  
+- **`terminal_visualizer.py`**: Terminal-based ASCII animation
+  - ANSI terminal control
+  - ASCII bar rendering with color highlighting
+  
+- **`pygame_visualizer.py`**: 2D graphical visualization
+  - Pygame event loop and rendering
+  - Real-time bar animation with swap highlighting
+  
+- **`cli.py`**: Command-line interface
+  - User interaction and mode selection
+  - Output formatting
+  
+- **`main.py`**: Minimal entry point
+  - Imports and runs the CLI
+  
+- **`tests/test_main.py`**: Unit tests
+  - Comprehensive test coverage for sorting and parsing logic
 
 ## What this project includes
 
@@ -8,15 +35,45 @@ A small Python lab project that implements Bubble Sort in clear, testable steps.
 - Swap decision helper for adjacent values
 - One Bubble Sort pass (`bubble_sort_step`)
 - Full Bubble Sort (`bubble_sort`) with early-exit optimization
-- Output formatting helper
+- Animation frame generation with swap metadata
+- Terminal-based ASCII visualization with per-swap highlighting
+- 2D Pygame visualization with color-coded swap events
 - Pytest test suite with 5 focused tests
 
 ## Project structure
 
-- `main.py`: core sorting and helper functions
-- `tests/test_main.py`: unit tests using `pytest`
-- `REPORT.md`: project reflection template
-- `JOURNAL.md`: chronological interaction log
+```
+.
+├── bubble_sort.py          # Core sorting logic (no UI)
+├── cli.py                   # CLI interaction and orchestration
+├── terminal_visualizer.py   # ASCII animation renderer
+├── pygame_visualizer.py     # 2D pygame renderer
+├── main.py                  # Entry point
+├── tests/
+│   └── test_main.py        # Unit tests
+├── requirements.txt         # Python dependencies
+├── README.md               # This file
+├── JOURNAL.md              # Interaction history
+└── REPORT.md               # Project reflection template
+
+## Design Rationale
+
+This project demonstrates clean architecture through separation of concerns:
+
+1. **Logic Layer** (`bubble_sort.py`)
+   - Pure functions with no I/O or UI dependencies
+   - Testable in isolation
+   - Reusable by any visualization layer
+
+2. **UI Layers**
+   - Terminal and Pygame visualizers are interchangeable
+   - Each layer only depends on the logic layer
+   - New renderers can be added without modifying existing code
+
+3. **Orchestration** (`cli.py`)
+   - Coordinates user input, sorting, and visualization
+   - Minimal business logic
+   - Easy to extend with new modes or options
 
 ## Requirements
 
