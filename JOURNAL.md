@@ -146,3 +146,19 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 15:23
 - **Prompt**: Can you implement a Pygame based visualization?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 15:25
+- **User**: krishna.bansal@epita.fr
+- **Prompt**: Can you implement a Pygame based visualization?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Implemented optional Pygame 2D bar visualization with frame playback, event loop controls, and mode selection in run_app(); updated README with installation and usage instructions.
+- **Context and Reasons for Changes**: User requested a real 2D visualization approach; added a Pygame path while preserving terminal/no-animation modes and keeping tests import-safe.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 15:34
+- **Prompt**: Can you install PyGame in the local virtual environment and then create a requirements.txt that includes the required libraries to run this project, and finally update README to explain all of this?
