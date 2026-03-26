@@ -1,4 +1,4 @@
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Tuple
 import time
 import importlib
 
@@ -39,41 +39,53 @@ def clear_terminal() -> None:
     print('\033[H\033[J', end='', flush=True)
 
 
-def render_ascii_bars(values: List[int], highlighted_index: Optional[int] = None) -> str:
+def render_ascii_bars(
+    values: List[int],
+    highlighted_indices: Optional[Tuple[int, int]] = None,
+) -> str:
     lines = []
+    left_idx, right_idx = highlighted_indices if highlighted_indices else (-1, -1)
     for i, val in enumerate(values):
         bar = '#' * val
-        if i == highlighted_index:
-            line = f'\033[93m{bar} {val}\033[0m'
+        if i == left_idx:
+            line = f'\033[96m{bar} {val}\033[0m'
+        elif i == right_idx:
+            line = f'\033[95m{bar} {val}\033[0m'
         else:
             line = f'{bar} {val}'
         lines.append(line)
     return '\n'.join(lines)
 
 
-def bubble_sort_animation_frames(values: List[int]) -> List[List[int]]:
-    frames = []
+def bubble_sort_animation_frames(values: List[int]) -> List[Tuple[List[int], Optional[Tuple[int, int]]]]:
+    frames: List[Tuple[List[int], Optional[Tuple[int, int]]]] = []
     work = values.copy()
-    frames.append(work.copy())
+    frames.append((work.copy(), None))
     for last in range(len(work) - 1, 0, -1):
-        if not bubble_sort_step(work, last):
+        swapped_in_pass = False
+        for i in range(last):
+            if needs_swap(work[i], work[i + 1]):
+                work[i], work[i + 1] = work[i + 1], work[i]
+                swapped_in_pass = True
+                frames.append((work.copy(), (i, i + 1)))
+        if not swapped_in_pass:
             break
-        frames.append(work.copy())
+    frames.append((work.copy(), None))
     return frames
 
 
-def animate_bubble_sort_in_place(values: List[int], delay_seconds: float = 0.2) -> None:
+def animate_bubble_sort_in_place(values: List[int], delay_seconds: float = 0.35) -> None:
     frames = bubble_sort_animation_frames(values)
-    for frame in frames:
+    for frame_values, swapped_pair in frames:
         clear_terminal()
-        print(render_ascii_bars(frame), flush=True)
+        print(render_ascii_bars(frame_values, swapped_pair), flush=True)
         time.sleep(delay_seconds)
-    print('\nDone! Sorted:', frames[-1])
+    print('\nDone! Sorted:', frames[-1][0])
 
 
 def animate_bubble_sort_pygame(
     values: List[int],
-    frame_delay_ms: int = 250,
+    frame_delay_ms: int = 450,
     width: int = 960,
     height: int = 540,
 ) -> None:
@@ -102,7 +114,8 @@ def animate_bubble_sort_pygame(
     bg = (24, 28, 36)
     text = (240, 240, 240)
     bar = (92, 184, 92)
-    changed = (255, 193, 7)
+    swap_left = (56, 189, 248)
+    swap_right = (244, 114, 182)
 
     frame_index = 0
     last_tick = pygame.time.get_ticks()
@@ -125,19 +138,22 @@ def animate_bubble_sort_pygame(
             frame_index += 1
             last_tick = now
 
-        current = frames[frame_index]
-        previous = frames[max(0, frame_index - 1)]
-        changed_indices = {i for i, (a, b) in enumerate(zip(previous, current)) if a != b}
+        current_values, current_swap = frames[frame_index]
 
         screen.fill(bg)
-        bar_slot = max(1, (width - (2 * side_margin)) // len(current))
+        bar_slot = max(1, (width - (2 * side_margin)) // len(current_values))
 
-        for i, value in enumerate(current):
+        for i, value in enumerate(current_values):
             bar_height = int((value / max_value) * bar_area_height)
             x = side_margin + i * bar_slot
             y = base_y - bar_height
             draw_width = max(1, bar_slot - 2)
-            color = changed if i in changed_indices else bar
+            if current_swap and i == current_swap[0]:
+                color = swap_left
+            elif current_swap and i == current_swap[1]:
+                color = swap_right
+            else:
+                color = bar
             pygame.draw.rect(screen, color, (x, y, draw_width, bar_height))
 
         status = "Sorted" if frame_index == len(frames) - 1 else "Sorting..."
