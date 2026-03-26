@@ -89,3 +89,8 @@
 - **Socratic Mode**: ON
 - **Changes Made**: Created README.md with project overview, structure, requirements, setup steps, pytest instructions, and a runnable usage example aligned with main.py and tests.
 - **Context and Reasons for Changes**: User requested README creation/update; the repository lacked README.md, so I added clear onboarding and execution guidance for the bubble sort lab.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 15:11
+- **Prompt**: I would like to visualize the sorting as it is happening. First, I would like to explore a terminal based approach. What do you suggest?
