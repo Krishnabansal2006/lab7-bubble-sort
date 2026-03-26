@@ -23,3 +23,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 14:13
 - **Prompt**: Update the journal with this interaction - I asked for a code review of my bubble sort implementation and made fixes based on the feedback.
 
+### 26-03-2026 15:01
+- **Prompt**: Can you set up testing for this app, using basic pytest features and create 5 tests?
+
