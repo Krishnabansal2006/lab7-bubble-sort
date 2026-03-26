@@ -62,3 +62,19 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 15:01
 - **Prompt**: Can you set up testing for this app, using basic pytest features and create 5 tests?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 15:03
+- **User**: krishna.bansal@epita.fr
+- **Prompt**: Can you set up testing for this app, using basic pytest features and create 5 tests?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Added pytest-based test suite with 5 tests in tests/test_main.py covering input parsing, swap logic, single-pass behavior, full sort behavior, and output formatting; executed pytest successfully.
+- **Context and Reasons for Changes**: User requested basic pytest setup with five tests; implemented focused unit tests around core functions and validated correctness by running the suite locally.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 15:06
+- **Prompt**: Can you create or update README.md for this project?

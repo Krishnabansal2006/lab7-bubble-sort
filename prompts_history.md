@@ -26,3 +26,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 15:01
 - **Prompt**: Can you set up testing for this app, using basic pytest features and create 5 tests?
 
+### 26-03-2026 15:06
+- **Prompt**: Can you create or update README.md for this project?
+
