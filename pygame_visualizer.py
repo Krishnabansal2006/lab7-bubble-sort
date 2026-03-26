@@ -34,7 +34,9 @@ def animate_bubble_sort_pygame(
         print("Pygame visualization currently supports non-negative integers only.")
         return
 
-    frames = bubble_sort_animation_frames(values)
+    frame_stream = bubble_sort_animation_frames(values)
+    current_values, current_swap = next(frame_stream)
+    next_frame = next(frame_stream, None)
     max_value = max(max(values), 1)
 
     pygame.init()
@@ -51,7 +53,7 @@ def animate_bubble_sort_pygame(
     swap_right = (244, 114, 182)
 
     # Layout calculations
-    frame_index = 0
+    frame_index = 1
     last_tick = pygame.time.get_ticks()
     top_margin = 70
     bottom_margin = 70
@@ -70,12 +72,11 @@ def animate_bubble_sort_pygame(
 
         # Advance frame based on timer
         now = pygame.time.get_ticks()
-        if frame_index < len(frames) - 1 and now - last_tick >= frame_delay_ms:
+        if next_frame is not None and now - last_tick >= frame_delay_ms:
+            current_values, current_swap = next_frame
             frame_index += 1
+            next_frame = next(frame_stream, None)
             last_tick = now
-
-        # Draw current frame
-        current_values, current_swap = frames[frame_index]
 
         screen.fill(bg)
         bar_slot = max(1, (width - (2 * side_margin)) // len(current_values))
@@ -97,10 +98,8 @@ def animate_bubble_sort_pygame(
             pygame.draw.rect(screen, color, (x, y, draw_width, bar_height))
 
         # Draw status text
-        status = "Sorted" if frame_index == len(frames) - 1 else "Sorting..."
-        status_text = font.render(
-            f"{status} | Frame {frame_index + 1}/{len(frames)}", True, text
-        )
+        status = "Sorted" if next_frame is None else "Sorting..."
+        status_text = font.render(f"{status} | Frame {frame_index}", True, text)
         hint_text = font.render("Press Q or ESC to close", True, text)
         screen.blit(status_text, (20, 20))
         screen.blit(hint_text, (20, height - 40))

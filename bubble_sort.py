@@ -1,6 +1,6 @@
 """Core bubble sort logic with no UI dependencies."""
 
-from typing import List, Optional, Tuple
+from typing import Iterator, List, Optional, Tuple
 
 
 def parse_user_input(raw_text: str) -> List[int]:
@@ -48,25 +48,23 @@ def bubble_sort(values: List[int]) -> List[int]:
 
 def bubble_sort_animation_frames(
     values: List[int],
-) -> List[Tuple[List[int], Optional[Tuple[int, int]]]]:
+) -> Iterator[Tuple[List[int], Optional[Tuple[int, int]]]]:
     """
-    Generate a sequence of animation frames for bubble sort.
+    Yield animation frames for bubble sort as a stream.
     
     Each frame is a tuple of (current_state, swapped_indices).
     swapped_indices is None at start/end, or a tuple (left_idx, right_idx)
     indicating which two bars were swapped to reach this state.
     """
-    frames: List[Tuple[List[int], Optional[Tuple[int, int]]]] = []
     work = values.copy()
-    frames.append((work.copy(), None))
+    yield (work.copy(), None)
     for last in range(len(work) - 1, 0, -1):
         swapped_in_pass = False
         for i in range(last):
             if needs_swap(work[i], work[i + 1]):
                 work[i], work[i + 1] = work[i + 1], work[i]
                 swapped_in_pass = True
-                frames.append((work.copy(), (i, i + 1)))
+                yield (work.copy(), (i, i + 1))
         if not swapped_in_pass:
             break
-    frames.append((work.copy(), None))
-    return frames
+    yield (work.copy(), None)

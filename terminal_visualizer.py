@@ -51,9 +51,10 @@ def animate_bubble_sort_in_place(
         values: list of integers to sort.
         delay_seconds: delay between animation frames.
     """
-    frames = bubble_sort_animation_frames(values)
-    for frame_values, swapped_pair in frames:
+    final_values = values.copy()
+    for frame_values, swapped_pair in bubble_sort_animation_frames(values):
         clear_terminal()
         print(render_ascii_bars(frame_values, swapped_pair), flush=True)
+        final_values = frame_values
         time.sleep(delay_seconds)
-    print('\nDone! Sorted:', frames[-1][0])
+    print('\nDone! Sorted:', final_values)
