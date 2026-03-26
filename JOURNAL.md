@@ -210,3 +210,8 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 18:58
 - **Prompt**: Can you explain the performance issue in my animation frame collection and suggest a generator-based alternative?
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 19:30
+- **Prompt**: Can you refactor bubble_sort_animation_frames to use a generator with yield instead of collecting all frames upfront? Update the consumers in terminal_visualizer.py and pygame_visualizer.py to work with the stream. Update the journal after.
