@@ -59,3 +59,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 15:42
 - **Prompt**: main.py is too big and looks messy. Can you refactor the project and enforce the separation of concerns between UI and Logic? Use several files if needed.
 
+### 26-03-2026 18:58
+- **Prompt**: Can you explain the performance issue in my animation frame collection and suggest a generator-based alternative?
+

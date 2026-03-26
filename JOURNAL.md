@@ -205,3 +205,8 @@
 - **Socratic Mode**: ON
 - **Changes Made**: Refactored monolithic main.py into modular structure: bubble_sort.py (logic), terminal_visualizer.py (terminal UI), pygame_visualizer.py (2D UI), cli.py (orchestration), and minimal main.py entry point; updated tests and README with architecture documentation.
 - **Context and Reasons for Changes**: User requested separation of concerns; refactoring improves maintainability, testability, and extensibility by decoupling UI from logic.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 18:58
+- **Prompt**: Can you explain the performance issue in my animation frame collection and suggest a generator-based alternative?
